@@ -1,0 +1,10 @@
+.DS_Store
+.cache
+/.idea
+/.vscode
+/.env
+/.devcontainer
+/tmp/
+/log/
+
+

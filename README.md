@@ -25,6 +25,12 @@ You need the following software to be installed on your system:
 
         $ docker run --rm -v "$PWD":/app fake_eta ruby -r "/app/services/fake_eta_service.rb" -e "FakeEtaService.run_example"
 
+    There can be an error because default fake_eta services can be shutdowned
+    
+4.  Run example command at the command prompt to the mock service:
+
+        $ docker run --rm -e FAKE_ETA_URL=https://fake-eta.free.beeceptor.com -v "$PWD":/app fake_eta ruby -r "/app/services/fake_eta_service.rb" -e "FakeEtaService.run_example"
+
 ### Run tests
 
         $ docker run --rm -v "$PWD":/app fake_eta rspec tests

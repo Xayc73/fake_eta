@@ -1,12 +1,15 @@
+# frozen_string_literal: true
+
 require_relative '../clients/fake_eta_client'
 
 class FakeEtaService
   CARS_LIMIT = 3
-  DEFAULT_TARGET = { lat: 55.752992, lng: 37.618333 }
+  DEFAULT_TARGET = { lat: 55.752992, lng: 37.618333 }.freeze
 
   class << self
-    def run_example() #looks need controller
-      minutes_to_wait, errors = self.get_arrival_time(DEFAULT_TARGET)
+    # looks need controller
+    def run_example
+      minutes_to_wait, errors = get_arrival_time(DEFAULT_TARGET)
       unless errors.nil?
         puts errors.join('\n')
         return
@@ -23,7 +26,7 @@ class FakeEtaService
 
       [arrival_times.min, nil]
     rescue FakeEtaAPIException
-      return [nil, ['Something went wrong, sorry. We already fixing the problem']]
+      [nil, ['Something went wrong, sorry. We already fixing the problem']]
     end
 
     private

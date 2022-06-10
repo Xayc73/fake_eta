@@ -7,7 +7,7 @@ class FakeEtaService
   class << self
     def run_example() #looks need controller
       minutes_to_wait, errors = self.get_arrival_time(DEFAULT_TARGET)
-      unless errors.empty?
+      unless errors.nil?
         puts errors.join('\n')
         return
       end

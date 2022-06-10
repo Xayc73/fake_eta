@@ -21,9 +21,9 @@ You need the following software to be installed on your system:
 
         $ docker build -t fake_eta ./
     
-3.  Run necessary command at the command prompt:
+3.  Run example command at the command prompt:
 
-        $ docker run --rm -v "$PWD":/app fake_eta command
+        $ docker run --rm -v "$PWD":/app fake_eta ruby -r "/app/services/fake_eta_service.rb" -e "FakeEtaService.run_example"
 
 ### Run tests
 
